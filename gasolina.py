@@ -1,24 +1,23 @@
-# código de geração do gráfico
+# Bibliotecas usadas para gerar o gráfico.
 
-import seaborn as sns
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Lê o arquivo csv e gera o dataframe do arquivo.
+# Lê o arquivo csv e gera o dataframe.
 
 df = pd.read_csv("gasolina.csv")
 
-# Cria o gráfico de linhas definindo eixo x e y.
+# Gera o gráfico de linha definindo x e y.
 
 sns.lineplot(data=df, x="dia", y="venda")
 
-# Adiciona título ao gráfico e labels.
+# Nomeia o gráfico e os eixos x e y.
 
-plt.title("Preço da gasolina de São Paulo nos 10 primeiros dias de Julho 2021")
+plt.title("Preço da gasolina no mês de Julho/2021")
 plt.xlabel("Dia")
-plt.ylabel("Preço")
+plt.ylabel("Preço da gasolina")
 
-# Salva o gráfico em um arquivo png.
+# Salva o gráfico como arquivo png.
 
 plt.savefig("gasolina.png")
-plt.show()
